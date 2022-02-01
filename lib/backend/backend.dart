@@ -4,28 +4,47 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 
-import 'schema/users_record.dart';
+import 'schema/n_f_t_collections_record.dart';
+import 'schema/user_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'schema/index.dart';
 export 'schema/serializers.dart';
 
-export 'schema/users_record.dart';
+export 'schema/n_f_t_collections_record.dart';
+export 'schema/user_record.dart';
 
-/// Functions to query UsersRecords (as a Stream and as a Future).
-Stream<List<UsersRecord>> queryUsersRecord(
+/// Functions to query NFTCollectionsRecords (as a Stream and as a Future).
+Stream<List<NFTCollectionsRecord>> queryNFTCollectionsRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(UsersRecord.collection, UsersRecord.serializer,
+    queryCollection(
+        NFTCollectionsRecord.collection, NFTCollectionsRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<UsersRecord>> queryUsersRecordOnce(
+Future<List<NFTCollectionsRecord>> queryNFTCollectionsRecordOnce(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollectionOnce(UsersRecord.collection, UsersRecord.serializer,
+    queryCollectionOnce(
+        NFTCollectionsRecord.collection, NFTCollectionsRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query UserRecords (as a Stream and as a Future).
+Stream<List<UserRecord>> queryUserRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(UserRecord.collection, UserRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<UserRecord>> queryUserRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(UserRecord.collection, UserRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
@@ -72,13 +91,13 @@ Future<List<T>> queryCollectionOnce<T>(
 
 // Creates a Firestore record representing the logged in user if it doesn't yet exist
 Future maybeCreateUser(User user) async {
-  final userRecord = UsersRecord.collection.doc(user.uid);
+  final userRecord = UserRecord.collection.doc(user.uid);
   final userExists = await userRecord.get().then((u) => u.exists);
   if (userExists) {
     return;
   }
 
-  final userData = createUsersRecordData(
+  final userData = createUserRecordData(
     email: user.email,
     displayName: user.displayName,
     photoUrl: user.photoURL,
