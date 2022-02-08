@@ -1,7 +1,10 @@
 import 'package:built_value/standard_json_plugin.dart';
 
-import 'n_f_t_collections_record.dart';
 import 'user_record.dart';
+import 'test_record.dart';
+import 'n_f_t_collections_record.dart';
+import 'a_i_input_record.dart';
+import 'mail_list_record.dart';
 
 import 'index.dart';
 
@@ -12,8 +15,11 @@ part 'serializers.g.dart';
 const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
-  NFTCollectionsRecord,
   UserRecord,
+  TestRecord,
+  NFTCollectionsRecord,
+  AIInputRecord,
+  MailListRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

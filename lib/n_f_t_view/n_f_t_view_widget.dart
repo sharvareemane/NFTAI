@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../login_page/login_page_widget.dart';
+import '../profile/profile_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,31 +93,67 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.bottomToTop,
-                                        duration: Duration(milliseconds: 300),
-                                        reverseDuration:
-                                            Duration(milliseconds: 300),
-                                        child: LoginPageWidget(),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 20, 0),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          PageTransition(
+                                            type:
+                                                PageTransitionType.bottomToTop,
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            reverseDuration:
+                                                Duration(milliseconds: 300),
+                                            child: LoginPageWidget(),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        'Login',
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.title1.override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF030000),
+                                        ),
                                       ),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Login',
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF030000),
                                     ),
                                   ),
-                                ),
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProfileWidget(),
+                                              ),
+                                            );
+                                          },
+                                          child: Icon(
+                                            Icons.person,
+                                            color: Color(0xFF060000),
+                                            size: 35,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

@@ -4,16 +4,52 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 
-import 'schema/n_f_t_collections_record.dart';
 import 'schema/user_record.dart';
+import 'schema/test_record.dart';
+import 'schema/n_f_t_collections_record.dart';
+import 'schema/a_i_input_record.dart';
+import 'schema/mail_list_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'schema/index.dart';
 export 'schema/serializers.dart';
 
-export 'schema/n_f_t_collections_record.dart';
 export 'schema/user_record.dart';
+export 'schema/test_record.dart';
+export 'schema/n_f_t_collections_record.dart';
+export 'schema/a_i_input_record.dart';
+export 'schema/mail_list_record.dart';
+
+/// Functions to query UserRecords (as a Stream and as a Future).
+Stream<List<UserRecord>> queryUserRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(UserRecord.collection, UserRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<UserRecord>> queryUserRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(UserRecord.collection, UserRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query TestRecords (as a Stream and as a Future).
+Stream<List<TestRecord>> queryTestRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(TestRecord.collection, TestRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<TestRecord>> queryTestRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(TestRecord.collection, TestRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 /// Functions to query NFTCollectionsRecords (as a Stream and as a Future).
 Stream<List<NFTCollectionsRecord>> queryNFTCollectionsRecord(
@@ -32,19 +68,34 @@ Future<List<NFTCollectionsRecord>> queryNFTCollectionsRecordOnce(
         NFTCollectionsRecord.collection, NFTCollectionsRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-/// Functions to query UserRecords (as a Stream and as a Future).
-Stream<List<UserRecord>> queryUserRecord(
+/// Functions to query AIInputRecords (as a Stream and as a Future).
+Stream<List<AIInputRecord>> queryAIInputRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(UserRecord.collection, UserRecord.serializer,
+    queryCollection(AIInputRecord.collection, AIInputRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<UserRecord>> queryUserRecordOnce(
+Future<List<AIInputRecord>> queryAIInputRecordOnce(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollectionOnce(UserRecord.collection, UserRecord.serializer,
+    queryCollectionOnce(AIInputRecord.collection, AIInputRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query MailListRecords (as a Stream and as a Future).
+Stream<List<MailListRecord>> queryMailListRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(MailListRecord.collection, MailListRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<MailListRecord>> queryMailListRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(MailListRecord.collection, MailListRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

@@ -16,15 +16,15 @@ abstract class NFTCollectionsRecord
   String get nFTJpeg;
 
   @nullable
-  @BuiltValueField(wireName: 'NFT_Artist')
+  @BuiltValueField(wireName: 'NFT_artist')
   String get nFTArtist;
 
   @nullable
-  @BuiltValueField(wireName: 'NFT_Name')
+  @BuiltValueField(wireName: 'NFT_name')
   String get nFTName;
 
   @nullable
-  @BuiltValueField(wireName: 'NFT_Price')
+  @BuiltValueField(wireName: 'NFT_price')
   double get nFTPrice;
 
   @nullable
