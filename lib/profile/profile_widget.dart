@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../login_page/login_page_widget.dart';
-import '../n_f_t_view/n_f_t_view_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +56,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         width: double.infinity,
                         height: 150,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                         ),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(24, 70, 0, 0),
@@ -86,11 +85,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         },
                                         child: Text(
                                           '[NFTAI]',
-                                          style:
-                                              FlutterFlowTheme.title1.override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFF030000),
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0xFF030000),
+                                              ),
                                         ),
                                       ),
                                       Padding(
@@ -98,11 +98,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             20, 0, 0, 0),
                                         child: Text(
                                           'Marketplace',
-                                          style:
-                                              FlutterFlowTheme.title1.override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFF030000),
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0xFF030000),
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -127,25 +128,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             onTap: () async {
                                               await Navigator.push(
                                                 context,
-                                                PageTransition(
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 300),
-                                                  reverseDuration: Duration(
-                                                      milliseconds: 300),
-                                                  child: LoginPageWidget(),
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      LoginPageWidget(),
                                                 ),
                                               );
                                             },
                                             child: Text(
                                               'Login',
                                               textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.title1
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF030000),
-                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .title1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF030000),
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -153,8 +152,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           width: 50,
                                           height: 50,
                                           decoration: BoxDecoration(
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             shape: BoxShape.circle,
                                           ),
                                           child: Row(
@@ -235,8 +234,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
-                                          child: Image.network(
-                                            'https://picsum.photos/seed/88/600',
+                                          child: Image.asset(
+                                            'assets/images/34GWN2I7W5LJJDYR7VOOLE7MLY.webp',
                                           ),
                                         ),
                                       ),
@@ -258,7 +257,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 children: [
                                   Text(
                                     'DistortionDeployer',
-                                    style: FlutterFlowTheme.title1,
+                                    style: FlutterFlowTheme.of(context).title1,
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
@@ -268,8 +267,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     options: FFButtonOptions(
                                       width: 130,
                                       height: 40,
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                      textStyle: FlutterFlowTheme.subtitle1,
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .subtitle1,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 2,
@@ -277,9 +278,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       borderRadius: 12,
                                     ),
                                   ),
-                                  Text(
-                                    'Joined February 2022',
-                                    style: FlutterFlowTheme.subtitle1,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Text(
+                                      'Joined February 2022',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle1,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -294,14 +300,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             children: [
                               Text(
                                 'Collected',
-                                style: FlutterFlowTheme.title3,
+                                style: FlutterFlowTheme.of(context).title3,
                               ),
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
                                 child: Text(
                                   'Created',
-                                  style: FlutterFlowTheme.title3,
+                                  style: FlutterFlowTheme.of(context).title3,
                                 ),
                               ),
                               Padding(
@@ -309,7 +315,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
                                 child: Text(
                                   'Favorites',
-                                  style: FlutterFlowTheme.title3,
+                                  style: FlutterFlowTheme.of(context).title3,
                                 ),
                               ),
                               Padding(
@@ -317,7 +323,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
                                 child: Text(
                                   'Offers',
-                                  style: FlutterFlowTheme.title3,
+                                  style: FlutterFlowTheme.of(context).title3,
                                 ),
                               ),
                             ],
@@ -336,7 +342,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     width: 50,
                                     height: 50,
                                     child: CircularProgressIndicator(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                     ),
                                   ),
                                 );
@@ -356,222 +363,253 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     final rowCollectionsNFTCollectionsRecord =
                                         rowCollectionsNFTCollectionsRecordList[
                                             rowCollectionsIndex];
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Stack(
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(50, 50, 0, 0),
-                                              child: Container(
-                                                width: 400,
-                                                height: 400,
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 50, 50, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Stack(
+                                            children: [
+                                              Container(
+                                                width: 500,
+                                                height: 600,
                                                 decoration: BoxDecoration(
+                                                  color: Color(0xFFF3F1F1),
                                                   boxShadow: [
                                                     BoxShadow(
-                                                      blurRadius: 3,
-                                                      color: Color(0x64000000),
-                                                      offset: Offset(0, 2),
+                                                      blurRadius: 2,
+                                                      color: Color(0xFF252525),
+                                                      offset: Offset(10, 10),
+                                                      spreadRadius: 2,
                                                     )
-                                                  ],
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                ),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    InkWell(
-                                                      onTap: () async {
-                                                        await Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                NFTViewWidget(),
-                                                          ),
-                                                        );
-                                                      },
-                                                      child: Image.network(
-                                                        rowCollectionsNFTCollectionsRecord
-                                                            .nFTJpeg,
-                                                        width: 400,
-                                                        height: 400,
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 20, 0, 0),
-                                                      child: Container(
-                                                        width: MediaQuery.of(
-                                                                    context)
-                                                                .size
-                                                                .width *
-                                                            0.5,
-                                                        height: 50,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color:
-                                                              Color(0x00E1DFDF),
-                                                          borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    8),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    8),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    0),
-                                                          ),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 20, 0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Container(
-                                                                width: 120,
-                                                                height: 120,
-                                                                clipBehavior: Clip
-                                                                    .antiAlias,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                ),
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://picsum.photos/seed/741/600',
-                                                                  fit: BoxFit
-                                                                      .contain,
-                                                                ),
-                                                              ),
-                                                              Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Text(
-                                                                    rowCollectionsNFTCollectionsRecord
-                                                                        .nFTName
-                                                                        .maybeHandleOverflow(
-                                                                      maxChars:
-                                                                          24,
-                                                                      replacement:
-                                                                          '…',
-                                                                    ),
-                                                                    style: FlutterFlowTheme
-                                                                        .title3,
-                                                                  ),
-                                                                  Text(
-                                                                    'BY ARTIST NAME',
-                                                                    style: FlutterFlowTheme
-                                                                        .subtitle1,
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            30,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 50,
-                                                                  height: 50,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme
-                                                                        .secondaryColor,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8,
-                                                                            8,
-                                                                            8,
-                                                                            8),
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .info_outlined,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      size: 20,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
                                                   ],
                                                 ),
                                               ),
-                                            ),
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  24.53, 0),
-                                              child: Padding(
+                                              Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 50, 0),
+                                                    .fromSTEB(50, 50, 0, 0),
                                                 child: Container(
-                                                  width: 500,
-                                                  height: 600,
+                                                  width: 400,
+                                                  height: 400,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFF3F1F1),
                                                     boxShadow: [
                                                       BoxShadow(
-                                                        blurRadius: 2,
+                                                        blurRadius: 3,
                                                         color:
-                                                            Color(0xFF252525),
-                                                        offset: Offset(10, 10),
-                                                        spreadRadius: 2,
+                                                            Color(0x64000000),
+                                                        offset: Offset(0, 2),
                                                       )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                  ),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      StreamBuilder<
+                                                          List<
+                                                              NFTCollectionsRecord>>(
+                                                        stream:
+                                                            queryNFTCollectionsRecord(
+                                                          singleRecord: true,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50,
+                                                                height: 50,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryColor,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          List<NFTCollectionsRecord>
+                                                              imageNFTCollectionsRecordList =
+                                                              snapshot.data;
+                                                          // Return an empty Container when the document does not exist.
+                                                          if (snapshot
+                                                              .data.isEmpty) {
+                                                            return Container();
+                                                          }
+                                                          final imageNFTCollectionsRecord =
+                                                              imageNFTCollectionsRecordList
+                                                                      .isNotEmpty
+                                                                  ? imageNFTCollectionsRecordList
+                                                                      .first
+                                                                  : null;
+                                                          return Image.asset(
+                                                            'assets/images/maxresdefault.jpg',
+                                                            width: 400,
+                                                            height: 400,
+                                                            fit: BoxFit.cover,
+                                                          );
+                                                        },
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(0, 20,
+                                                                    0, 0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.5,
+                                                          height: 50,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0x00E1DFDF),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(8),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          8),
+                                                              topLeft: Radius
+                                                                  .circular(0),
+                                                              topRight: Radius
+                                                                  .circular(0),
+                                                            ),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0,
+                                                                        0,
+                                                                        20,
+                                                                        0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Container(
+                                                                  width: 120,
+                                                                  height: 120,
+                                                                  clipBehavior:
+                                                                      Clip.antiAlias,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                  child: Image
+                                                                      .asset(
+                                                                    'assets/images/34GWN2I7W5LJJDYR7VOOLE7MLY.webp',
+                                                                    fit: BoxFit
+                                                                        .contain,
+                                                                  ),
+                                                                ),
+                                                                Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Text(
+                                                                      'NFT NAME',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .title3
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                Color(0xFF030000),
+                                                                          ),
+                                                                    ),
+                                                                    Text(
+                                                                      'BY ARTIST NAME',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .subtitle1,
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          30,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 50,
+                                                                    height: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryColor,
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              8,
+                                                                              8,
+                                                                              8,
+                                                                              8),
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .info_outlined,
+                                                                        color: Colors
+                                                                            .white,
+                                                                        size:
+                                                                            20,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     );
                                   }),
                                 ),
@@ -591,7 +629,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     width: 10000,
                                     height: 500,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                     ),
                                   ),
                                 ),
@@ -605,22 +644,28 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     children: [
                                       Text(
                                         'Stay in the loop',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.tertiaryColor,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
+                                            ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 10, 0, 0),
                                         child: Text(
                                           'Join our mailing list to stay in the loop\nwith our newest feature releases, \nNFT drops, and tips and tricks for\nnavigating NFTAI.',
-                                          style:
-                                              FlutterFlowTheme.title2.override(
-                                            fontFamily: 'Poppins',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title2
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
+                                              ),
                                         ),
                                       ),
                                       Padding(
@@ -632,8 +677,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             Container(
                                               width: 300,
                                               decoration: BoxDecoration(
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
                                               ),
                                               child: TextFormField(
                                                 controller: textController,
@@ -669,11 +715,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                                style: FlutterFlowTheme.title3
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFF020000),
-                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .title3
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF020000),
+                                                        ),
                                                 keyboardType:
                                                     TextInputType.emailAddress,
                                               ),
@@ -696,14 +745,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 options: FFButtonOptions(
                                                   width: 130,
                                                   height: 40,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .secondaryColor,
                                                   textStyle: FlutterFlowTheme
+                                                          .of(context)
                                                       .subtitle2
                                                       .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.white,
-                                                  ),
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                      ),
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1,

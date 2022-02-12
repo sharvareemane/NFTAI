@@ -56,20 +56,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           Text(
                             'Sign in with your wallet',
                             textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF030000),
-                            ),
+                            style: FlutterFlowTheme.of(context).title1.override(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF030000),
+                                ),
                           ),
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: Text(
                               'Sign in with one of available wallet\n providers or create a new wallet.',
-                              style: FlutterFlowTheme.subtitle1.override(
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF252525),
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF252525),
+                                  ),
                             ),
                           ),
                           Padding(
@@ -89,14 +91,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     options: FFButtonOptions(
                                       width: 400,
                                       height: 50,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.tertiaryColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.normal,
-                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                       elevation: 1,
                                       borderSide: BorderSide(
                                         color: Color(0xFFDBE2E7),
@@ -117,14 +122,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     options: FFButtonOptions(
                                       width: 400,
                                       height: 50,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.tertiaryColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.normal,
-                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                       elevation: 1,
                                       borderSide: BorderSide(
                                         color: Color(0xFFDBE2E7),
@@ -145,14 +153,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     options: FFButtonOptions(
                                       width: 400,
                                       height: 50,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.tertiaryColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.normal,
-                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                       elevation: 1,
                                       borderSide: BorderSide(
                                         color: Color(0xFFDBE2E7),
@@ -174,7 +185,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   width: double.infinity,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.tertiaryColor,
+                    color: FlutterFlowTheme.of(context).tertiaryColor,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 70, 0, 0),
@@ -201,10 +212,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   },
                                   child: Text(
                                     '[NFTAI]',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF030000),
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .title1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF030000),
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -212,10 +225,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       20, 0, 0, 0),
                                   child: Text(
                                     'Marketplace',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF030000),
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .title1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF030000),
+                                        ),
                                   ),
                                 ),
                               ],
@@ -238,24 +253,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                            reverseDuration:
-                                                Duration(milliseconds: 300),
-                                            child: LoginPageWidget(),
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                LoginPageWidget(),
                                           ),
                                         );
                                       },
                                       child: Text(
                                         'Login',
                                         textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF030000),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF030000),
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -263,7 +275,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     width: 50,
                                     height: 50,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.tertiaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Row(

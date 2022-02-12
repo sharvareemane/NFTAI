@@ -39,7 +39,7 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                   width: double.infinity,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.tertiaryColor,
+                    color: FlutterFlowTheme.of(context).tertiaryColor,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 70, 0, 0),
@@ -66,10 +66,12 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                   },
                                   child: Text(
                                     '[NFTAI]',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF030000),
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .title1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF030000),
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -77,10 +79,12 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                       20, 0, 0, 0),
                                   child: Text(
                                     'Marketplace',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF030000),
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .title1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF030000),
+                                        ),
                                   ),
                                 ),
                               ],
@@ -103,24 +107,21 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                            reverseDuration:
-                                                Duration(milliseconds: 300),
-                                            child: LoginPageWidget(),
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                LoginPageWidget(),
                                           ),
                                         );
                                       },
                                       child: Text(
                                         'Login',
                                         textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF030000),
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF030000),
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -128,7 +129,8 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                     width: 50,
                                     height: 50,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.tertiaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Row(
@@ -166,10 +168,9 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(300, 50, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(500, 50, 200, 0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Stack(
                             children: [
@@ -240,7 +241,8 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
@@ -251,8 +253,8 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                                   decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/741/600',
+                                                  child: Image.asset(
+                                                    'assets/images/34GWN2I7W5LJJDYR7VOOLE7MLY.webp',
                                                     fit: BoxFit.contain,
                                                   ),
                                                 ),
@@ -266,18 +268,23 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                                   children: [
                                                     Text(
                                                       'NFT NAME',
-                                                      style: FlutterFlowTheme
-                                                          .title3
-                                                          .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF030000),
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .title3
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: Color(
+                                                                    0xFF030000),
+                                                              ),
                                                     ),
                                                     Text(
                                                       'BY ARTIST NAME',
-                                                      style: FlutterFlowTheme
-                                                          .subtitle1,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle1,
                                                     ),
                                                   ],
                                                 ),
@@ -288,8 +295,10 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                                     width: 50,
                                                     height: 50,
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                          .secondaryColor,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryColor,
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Padding(
@@ -319,50 +328,75 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                            child: Text(
-                              'The Mars Supper',
-                              style: FlutterFlowTheme.title1,
-                            ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                          child: Text(
+                            'The Mars Supper',
+                            style: FlutterFlowTheme.of(context).title1,
                           ),
-                          Text(
-                            'by LanaDana',
-                            style: FlutterFlowTheme.subtitle1,
-                          ),
-                          Text(
-                            '4.4 ETH',
-                            style: FlutterFlowTheme.title3,
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FFButtonWidget(
+                        ),
+                        Text(
+                          'by LanaDana',
+                          style: FlutterFlowTheme.of(context).subtitle1,
+                        ),
+                        Text(
+                          '4.4 ETH',
+                          style: FlutterFlowTheme.of(context).title3,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FFButtonWidget(
+                                onPressed: () {
+                                  print('Button pressed ...');
+                                },
+                                text: 'Buy Now',
+                                options: FFButtonOptions(
+                                  width: 130,
+                                  height: 40,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
+                                      ),
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1,
+                                  ),
+                                  borderRadius: 12,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                                child: FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Buy Now',
+                                  text: 'Make Offer',
                                   options: FFButtonOptions(
                                     width: 130,
                                     height: 40,
-                                    color: FlutterFlowTheme.primaryColor,
-                                    textStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                        ),
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1,
@@ -370,36 +404,11 @@ class _NFTViewWidgetState extends State<NFTViewWidget> {
                                     borderRadius: 12,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      50, 0, 0, 0),
-                                  child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Make Offer',
-                                    options: FFButtonOptions(
-                                      width: 130,
-                                      height: 40,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                      ),
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1,
-                                      ),
-                                      borderRadius: 12,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
